@@ -13,6 +13,13 @@ function App() {
         message = 'Title is too long!';
     }
 
+    const movies = [
+        {title: "Wall-E"},
+        {title: "Pulp Fiction"},
+        {title: "Matrix"},
+        {title: "1670"},
+    ];
+
     return (
         <div>
             <h1>My favourite movies to watch</h1>
@@ -22,6 +29,9 @@ function App() {
             }
             <input type="text" value={title} onChange={(event) => setTitle(event.target.value)}/>
             <button onClick={() => alert(title)}>{button}</button>
+            <ul>
+                {movies.map((movie) => <li key={movie.title}>{movie.title}</li>)}
+            </ul>
         </div>
     );
 }
