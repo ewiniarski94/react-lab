@@ -2,11 +2,7 @@ import {useState} from "react";
 
 function App() {
     const [title, setTitle] = useState('');
-
-    function handleChange(event) {
-        setTitle(event.target.value);
-
-    }
+    const button = "Pokaż tytuł filmu";
 
     let message = '';
     if (title.length < 5) {
@@ -24,7 +20,8 @@ function App() {
             {
                 title.length > 0 && <div>{message}</div>
             }
-            <input type="text" value={title} onChange={handleChange}/>
+            <input type="text" value={title} onChange={(event) => setTitle(event.target.value)}/>
+            <button onClick={() => alert(title)}>{button}</button>
         </div>
     );
 }
